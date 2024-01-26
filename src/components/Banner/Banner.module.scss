@@ -1,0 +1,109 @@
+@import "variables.scss";
+
+.BannerWrapper {
+  position: relative;
+}
+
+.Slide {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 60px;
+}
+
+.Canvas {
+  width: 80%;
+  height: 80%;
+  position: absolute;
+  right: -45%;
+  opacity: 10%;
+  z-index: 1;
+  animation: rotate 10s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg) translateY(-40%);
+  }
+
+  to {
+    transform: rotate(360deg) translateY(-40%);
+  }
+}
+
+.Category {
+  margin-top: 170px;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+
+.Title {
+  width: 50%;
+  font-size: 75px;
+  font-weight: 700;
+  color: #181e4b;
+  height: 350px;
+}
+
+.Brief {
+  width: 50%;
+  font-size: 16px;
+  font-weight: 400;
+  color: $textPrimary;
+  height: 100px;
+}
+
+.LinksWrapper {
+  display: flex;
+  gap: 44px;
+  align-items: center;
+}
+
+.ItemLink {
+  background-color: #ff7c16;
+  padding: 18px 26px;
+  color: white;
+  font-size: 18px;
+  box-shadow: 0px 20px 70px #f1a50126;
+  border-radius: 10px;
+}
+
+.PlayBtn {
+  display: flex;
+  align-items: center;
+  color: #686d77;
+  font-size: 17px;
+}
+
+.PlayIcon {
+  background-color: #e72228;
+  border-radius: 100px;
+  width: 52px;
+  height: 52px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  margin-right: 20px;
+}
+
+.BulletsWrapper {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  justify-self: flex-end;
+}
+
+.SlideBullet {
+  width: 40px;
+  height: 40px;
+  border-radius: 100px;
+}
+
+.SlideSubBullet {
+  width: 3px;
+  height: 3px;
+  border-radius: 100px;
+  background-color: #353535;
+}
