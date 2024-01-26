@@ -1,0 +1,43 @@
+@import "variables.scss";
+
+.Navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  font-family: "Google Sans";
+  width: 100%;
+
+  ul {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+
+    li {
+      font-size: 17px;
+
+      a {
+        color: $textBlack;
+      }
+    }
+  }
+}
+
+.SignUpBtn {
+  width: 102px;
+  height: 40px;
+  border: 1px solid $textBlack;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.SwitchLang {
+  display: flex;
+  gap: 8px;
+}
