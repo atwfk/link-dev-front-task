@@ -1,5 +1,6 @@
 import { getApi } from "@/api/getApi";
 import Banner from "@/components/Banner";
+import OurWork from "@/components/OurWork";
 import { ErrorData } from "@/types/Error";
 import { Slide } from "@/types/slide";
 
@@ -12,6 +13,7 @@ export default function Home(props: HomeProps) {
   return (
     <>
       <Banner slides={props.data.slides as Slide[]} />
+      <OurWork />
     </>
   );
 }

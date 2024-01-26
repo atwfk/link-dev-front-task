@@ -1,0 +1,253 @@
+.OurWork {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  overflow: hidden;
+  background: repeating-linear-gradient(
+    -40deg,
+    rgba(77, 77, 77, 0.3),
+    rgba(84, 84, 84, 0.3) 100px,
+    rgba(133, 133, 133, 0.3) 14px,
+    rgba(174, 174, 174, 0.3) 14px,
+    rgb(206, 206, 206) 14px,
+    rgb(228, 228, 228) 14px,
+    rgb(242, 242, 242) 14px,
+    rgb(247, 247, 247) 14px
+  );
+}
+
+.SectionName {
+  position: absolute;
+  top: -100px;
+  left: -100px;
+  width: 663px;
+  font-size: 180px;
+  color: rgba(226, 226, 226, 0.4);
+
+  @media (max-width: 1120px) {
+    top: 0px;
+    left: 0px;
+    width: 200px;
+    font-size: 80px;
+  }
+}
+
+.SectionInfoWrapper {
+  margin-top: 80px;
+  margin-bottom: 60px;
+  width: 1150px;
+  background-color: rgb(242, 21, 182);
+
+  @media (max-width: 1850px) {
+    width: 930px;
+  }
+
+  @media (max-width: 1660px) {
+    width: 900px;
+  }
+
+  @media (max-width: 1450px) {
+    width: 850px;
+  }
+
+  @media (max-width: 1120px) {
+    width: 500px;
+  }
+  @media (max-width: 1120px) {
+    width: 100%;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.SectionInfo {
+  display: flex;
+  flex-direction: column;
+  width: 540px;
+  margin-left: 270px;
+  margin-top: 50px;
+  margin-bottom: 90px;
+
+  @media (max-width: 1850px) {
+    margin-left: 250px;
+  }
+
+  @media (max-width: 1660px) {
+    margin-left: 150px;
+  }
+
+  @media (max-width: 1560px) {
+    margin-left: 300px;
+  }
+
+  @media (max-width: 1400px) {
+    width: 300px;
+  }
+
+  @media (max-width: 1120px) {
+    margin-left: 150px;
+  }
+
+  @media (max-width: 1120px) {
+    width: 400px;
+    margin: 0;
+    margin-bottom: 350px;
+  }
+
+  @media (max-width: 525px) {
+    padding: 20px;
+    text-align: center;
+    width: auto;
+    margin-bottom: 950px;
+  }
+}
+
+.Title {
+  color: #253776;
+  font-size: 55px;
+  margin-bottom: 35px;
+  font-weight: 600;
+
+  @media (max-width: 1400px) {
+    font-size: 25px;
+    margin-bottom: 15px;
+  }
+}
+
+.Description {
+  color: #ffffff;
+  font-size: 28px;
+  font-weight: 400;
+
+  @media (max-width: 1400px) {
+    font-size: 15px;
+  }
+}
+
+.ServicesWrapper {
+  position: absolute;
+  top: 50px;
+  left: 200px;
+  display: flex;
+  background-color: transparent;
+
+  @media (max-width: 1850px) {
+    left: 200px;
+  }
+
+  @media (max-width: 1660px) {
+    left: 50px;
+  }
+
+  @media (max-width: 1400px) {
+    left: 100px;
+    top: 60px;
+  }
+
+  @media (max-width: 1120px) {
+    top: 220px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  @media (max-width: 525px) {
+    top: 350px;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.ServiceColumn {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  &:nth-child(1) {
+    margin-top: 250px;
+  }
+
+  &:nth-child(2) {
+    margin-top: 125px;
+  }
+
+  @media (max-width: 1400px) {
+    &:nth-child(1) {
+      margin-top: 150px;
+    }
+
+    &:nth-child(2) {
+      margin-top: 75px;
+    }
+  }
+
+  @media (max-width: 525px) {
+    &:nth-child(1) {
+      margin-top: 0;
+    }
+
+    &:nth-child(2) {
+      margin-top: 0;
+    }
+  }
+}
+
+.ServiceCard {
+  position: relative;
+  height: 250px;
+
+  img {
+    object-fit: cover;
+  }
+
+  @media (max-width: 1400px) {
+    width: 150px;
+    height: 150px;
+
+    img {
+      width: 150px;
+      height: 150px;
+    }
+  }
+
+  @media (max-width: 525px) {
+    margin-bottom: 20px;
+  }
+}
+
+.CardInfo {
+  position: absolute;
+  bottom: 20px;
+  left: 25px;
+  display: flex;
+  flex-direction: column;
+  color: #ffffff;
+}
+
+.ServiceName {
+  font-size: 25px;
+  font-weight: 500;
+
+  @media (max-width: 525px) {
+    font-size: 15px;
+  }
+}
+
+.ServiceLink {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #ffffff;
+
+  @media (max-width: 525px) {
+    font-size: 10px;
+  }
+}
+
+.Overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+}
