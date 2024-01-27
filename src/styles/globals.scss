@@ -25,6 +25,13 @@ a {
 }
 
 .section-wrapper {
-  max-width: 1160px;
   margin: auto;
+
+  @media (max-width: 1200px) {
+    max-width: 80%;
+  }
+
+  @media (min-width: 1200px) {
+    max-width: 1160px;
+  }
 }

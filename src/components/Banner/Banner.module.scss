@@ -44,6 +44,22 @@
   font-weight: 700;
   color: #181e4b;
   height: 350px;
+
+  @media (max-width: 1200px) {
+    font-size: 50px;
+    width: 70%;
+    height: 150px;
+  }
+
+  @media (max-width: 780px) {
+    font-size: 30px;
+    height: 100px;
+  }
+
+  @media (max-width: 600px) {
+    width: 100%;
+    height: 150px;
+  }
 }
 
 .Brief {
@@ -52,12 +68,26 @@
   font-weight: 400;
   color: $textPrimary;
   height: 100px;
+
+  @media (max-width: 1200px) {
+    width: 70%;
+    height: 120px;
+  }
+
+  @media (max-width: 600px) {
+    width: 100%;
+    height: 150px;
+  }
 }
 
 .LinksWrapper {
   display: flex;
   gap: 44px;
   align-items: center;
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+  }
 }
 
 .ItemLink {
@@ -94,6 +124,10 @@
   gap: 20px;
   justify-self: flex-end;
   margin-bottom: 40px;
+
+  @media (max-width: 600px) {
+    display: none;
+  }
 }
 
 .SlideBullet {
