@@ -2,6 +2,7 @@ import { getApi } from "@/api/getApi";
 import { getCategories } from "@/api/getCategories";
 import { getNews } from "@/api/getNews";
 import Banner from "@/components/Banner";
+import Footer from "@/components/Footer";
 import NewsList from "@/components/NewsList";
 import OurWork from "@/components/OurWork";
 import { ErrorData } from "@/types/Error";
@@ -29,6 +30,7 @@ export default function Home(props: HomeProps) {
       <Banner slides={props.data.slides as Slide[]} />
       <OurWork />
       <NewsList categories={props.data.categories} news={newsToRender} />
+      <Footer />
     </>
   );
 }

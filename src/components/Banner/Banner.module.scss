@@ -12,22 +12,21 @@
 }
 
 .Canvas {
-  width: 80%;
-  height: 80%;
   position: absolute;
   right: -45%;
   opacity: 10%;
+  top: -20%;
   z-index: 1;
   animation: rotate 10s linear infinite;
 }
 
 @keyframes rotate {
   from {
-    transform: rotate(0deg) translateY(-40%);
+    transform: rotate(0deg);
   }
 
   to {
-    transform: rotate(360deg) translateY(-40%);
+    transform: rotate(360deg);
   }
 }
 
