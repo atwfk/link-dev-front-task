@@ -1,0 +1,78 @@
+@import "variables.scss";
+
+.NewsCard {
+  border-radius: 24px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 16px 26px #00000029;
+  max-width: 360px;
+
+  img {
+    width: 100%;
+  }
+}
+
+.CardInfo {
+  padding: 27px 15px 36px 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.Description {
+  color: $textPrimary;
+  font-weight: 600;
+  font-size: 18px;
+  height: 80px;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.Date {
+  color: #707070;
+  font-size: 16px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+}
+
+.DateIcon {
+  width: 18px;
+  height: 20px;
+  color: $textSecondary;
+  margin-right: 14px;
+}
+
+.CardFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.Category {
+  display: flex;
+  justify-content: center;
+  border-radius: 10px;
+  background-color: #74747433;
+  color: #5e6282;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 1px;
+  width: 110px;
+}
+
+.CardActions {
+  display: flex;
+  gap: 14px;
+  color: $textSecondary;
+
+  svg {
+    width: 25px;
+    height: 25px;
+  }
+}
