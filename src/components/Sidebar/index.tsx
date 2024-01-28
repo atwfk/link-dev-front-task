@@ -14,8 +14,7 @@ export default function Sidebar() {
             <Link href="#">{link.text}</Link>
           </li>
         ))}
-      </ul>
-      <ul>
+
         <li>
           <Link href="#">Login</Link>
         </li>

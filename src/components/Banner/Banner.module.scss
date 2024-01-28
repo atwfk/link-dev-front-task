@@ -17,7 +17,7 @@
   opacity: 10%;
   top: -20%;
   z-index: 1;
-  animation: rotate 10s linear infinite;
+  animation: rotate 5s linear infinite;
 
   @media (max-width: 600px) {
     top: 30%;
@@ -34,11 +34,22 @@
   }
 }
 
+.BannerImage {
+  position: absolute;
+  top: 10%;
+  right: -20%;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
 .Category {
   margin-top: 170px;
   font-size: 20px;
   font-weight: 600;
   margin-bottom: 24px;
+  z-index: 3;
 }
 
 .Title {
@@ -47,6 +58,7 @@
   font-weight: 700;
   color: #181e4b;
   height: 350px;
+  z-index: 3;
 
   @media (max-width: 1200px) {
     font-size: 50px;
@@ -71,6 +83,7 @@
   font-weight: 400;
   color: $textPrimary;
   height: 100px;
+  z-index: 3;
 
   @media (max-width: 1200px) {
     width: 70%;
@@ -87,6 +100,7 @@
   display: flex;
   gap: 44px;
   align-items: center;
+  z-index: 3;
 
   @media (max-width: 600px) {
     flex-direction: column;
@@ -127,6 +141,7 @@
   gap: 20px;
   justify-self: flex-end;
   margin-bottom: 40px;
+  height: 50px;
 
   @media (max-width: 600px) {
     display: none;
@@ -137,6 +152,13 @@
   width: 40px;
   height: 40px;
   border-radius: 100px;
+  z-index: 5;
+  transition: all 0.3s ease;
+}
+
+.ActiveBullet {
+  width: 50px;
+  height: 50px;
 }
 
 .SlideSubBullet {

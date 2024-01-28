@@ -1,0 +1,73 @@
+.ServiceCard {
+  position: relative;
+  height: 250px;
+
+  img {
+    object-fit: cover;
+  }
+
+  &:hover {
+    .Overlay {
+      background: transparent linear-gradient(43deg, #13276b 0%, #00000000 100%)
+        0% 0% no-repeat padding-box;
+    }
+
+    .ServiceLink {
+      visibility: visible;
+    }
+  }
+
+  @media (max-width: 1400px) {
+    width: 150px;
+    height: 150px;
+
+    img {
+      width: 150px;
+      height: 150px;
+    }
+  }
+
+  @media (max-width: 525px) {
+    margin-bottom: 20px;
+  }
+}
+
+.CardInfo {
+  position: absolute;
+  bottom: 20px;
+  left: 25px;
+  display: flex;
+  flex-direction: column;
+  color: #ffffff;
+}
+
+.ServiceName {
+  font-size: 25px;
+  font-weight: 500;
+
+  @media (max-width: 525px) {
+    font-size: 15px;
+  }
+}
+
+.ServiceLink {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #ffffff;
+  visibility: hidden;
+
+  @media (max-width: 525px) {
+    font-size: 10px;
+  }
+}
+
+.Overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}

@@ -3,6 +3,7 @@
   display: flex;
   justify-content: flex-end;
   overflow: hidden;
+  z-index: 5;
   background: repeating-linear-gradient(
     -40deg,
     rgba(77, 77, 77, 0.3),
@@ -189,65 +190,4 @@
       margin-top: 0;
     }
   }
-}
-
-.ServiceCard {
-  position: relative;
-  height: 250px;
-
-  img {
-    object-fit: cover;
-  }
-
-  @media (max-width: 1400px) {
-    width: 150px;
-    height: 150px;
-
-    img {
-      width: 150px;
-      height: 150px;
-    }
-  }
-
-  @media (max-width: 525px) {
-    margin-bottom: 20px;
-  }
-}
-
-.CardInfo {
-  position: absolute;
-  bottom: 20px;
-  left: 25px;
-  display: flex;
-  flex-direction: column;
-  color: #ffffff;
-}
-
-.ServiceName {
-  font-size: 25px;
-  font-weight: 500;
-
-  @media (max-width: 525px) {
-    font-size: 15px;
-  }
-}
-
-.ServiceLink {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  color: #ffffff;
-
-  @media (max-width: 525px) {
-    font-size: 10px;
-  }
-}
-
-.Overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.3);
 }

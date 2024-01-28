@@ -7,6 +7,7 @@ import { FaPlay } from "react-icons/fa";
 import styles from "./Banner.module.scss";
 import Modal from "../Modal";
 import Sidebar from "../Sidebar";
+import person from "@/assets/person.png";
 
 type BannerProps = {
   slides: Slide[];
@@ -38,7 +39,11 @@ export default function Banner(props: BannerProps) {
               className={styles.Slide}
               onClick={changeSlide}
             >
-              <Image src={slide.imgUrl} alt={slide.category} />
+              <Image
+                src={slide.imgUrl || person}
+                alt={slide.category}
+                className={styles.BannerImage}
+              />
               <div className={styles.Canvas}>
                 <Canvas color={slide.colorCode} />
               </div>
@@ -71,7 +76,9 @@ export default function Banner(props: BannerProps) {
             <>
               <div
                 key={slide.id}
-                className={styles.SlideBullet}
+                className={`${styles.SlideBullet} ${
+                  slide.id === activeSlide && styles.ActiveBullet
+                }`}
                 style={{ backgroundColor: `#${slide.colorCode}` }}
               />
               {Array(7)
@@ -83,7 +90,9 @@ export default function Banner(props: BannerProps) {
           ) : (
             <div
               key={slide.id}
-              className={styles.SlideBullet}
+              className={`${styles.SlideBullet} ${
+                slide.id === activeSlide && styles.ActiveBullet
+              }`}
               style={{ backgroundColor: `#${slide.colorCode}` }}
             />
           )
