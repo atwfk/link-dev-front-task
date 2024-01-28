@@ -18,6 +18,10 @@
   top: -20%;
   z-index: 1;
   animation: rotate 10s linear infinite;
+
+  @media (max-width: 600px) {
+    top: 30%;
+  }
 }
 
 @keyframes rotate {

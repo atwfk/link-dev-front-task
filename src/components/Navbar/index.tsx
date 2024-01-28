@@ -4,13 +4,22 @@ import Link from "next/link";
 import { useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 import styles from "./Navbar.module.scss";
+import { GiHamburgerMenu } from "react-icons/gi";
 
-export default function Navbar() {
+type NavbarProps = {
+  openSidebar: () => void;
+};
+
+export default function Navbar({ openSidebar }: NavbarProps) {
   const [lang, setLang] = useState("EN");
 
   return (
     <nav className={styles.Navbar}>
       <Logo />
+      <button className={styles.BurgerBtn} onClick={() => openSidebar()}>
+        <GiHamburgerMenu />
+      </button>
+
       <ul>
         {navLinks.map((link) => (
           <li key={link.id}>

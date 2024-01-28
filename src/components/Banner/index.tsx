@@ -5,6 +5,8 @@ import Link from "next/link";
 import { useState } from "react";
 import { FaPlay } from "react-icons/fa";
 import styles from "./Banner.module.scss";
+import Modal from "../Modal";
+import Sidebar from "../Sidebar";
 
 type BannerProps = {
   slides: Slide[];
@@ -12,6 +14,7 @@ type BannerProps = {
 
 export default function Banner(props: BannerProps) {
   const [activeSlide, setActiveSlide] = useState(props.slides[0].id);
+  const [sidebarVisible, setSidebarVisible] = useState(false);
 
   const changeSlide = () => {
     if (activeSlide < props.slides.length - 1) setActiveSlide(activeSlide + 1);
@@ -20,7 +23,12 @@ export default function Banner(props: BannerProps) {
 
   return (
     <div className={`section-wrapper relative ${styles.BannerWrapper}`}>
-      <Navbar />
+      <Navbar openSidebar={() => setSidebarVisible(true)} />
+      {sidebarVisible && (
+        <Modal closeModalHandler={() => setSidebarVisible(false)}>
+          <Sidebar />
+        </Modal>
+      )}
 
       {props.slides.map(
         (slide) =>

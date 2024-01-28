@@ -26,6 +26,26 @@
       }
     }
   }
+
+  @media (max-width: 970px) {
+    ul {
+      display: none;
+    }
+  }
+}
+
+.BurgerBtn {
+  background-color: transparent;
+  border: 1px solid $textBlack;
+  color: $textBlack;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: none;
+
+  @media (max-width: 970px) {
+    display: block;
+  }
 }
 
 .SignUpBtn {
