@@ -2,7 +2,7 @@ import Navbar from "@/components/Navbar";
 import { Slide } from "@/types/slide";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import { FaPlay } from "react-icons/fa";
 import styles from "./Banner.module.scss";
 import Modal from "../Modal";
@@ -55,7 +55,10 @@ export default function Banner(props: BannerProps) {
               </span>
               <h2 className={styles.Title}>{slide.title}</h2>
               <p className={styles.Brief}>{slide.brief}</p>
-              <div className={styles.LinksWrapper}>
+              <div
+                className={styles.LinksWrapper}
+                onClick={(e) => e.stopPropagation()}
+              >
                 <Link href={slide.itemUrl} className={styles.ItemLink}>
                   Find out more
                 </Link>
@@ -73,9 +76,8 @@ export default function Banner(props: BannerProps) {
       <div className={styles.BulletsWrapper}>
         {props.slides.map((slide, index) =>
           index < slide.order ? (
-            <>
+            <Fragment key={slide.id}>
               <div
-                key={slide.id}
                 className={`${styles.SlideBullet} ${
                   slide.id === activeSlide && styles.ActiveBullet
                 }`}
@@ -84,9 +86,9 @@ export default function Banner(props: BannerProps) {
               {Array(7)
                 .fill(1)
                 .map((_: number, index) => (
-                  <div className={styles.SlideSubBullet} key={index} />
+                  <div className={styles.SlideSubBullet} key={`${index}`} />
                 ))}
-            </>
+            </Fragment>
           ) : (
             <div
               key={slide.id}

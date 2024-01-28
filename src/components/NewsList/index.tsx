@@ -89,12 +89,11 @@ export default function NewsList({
       <ul className={styles.News}>
         {news.length ? (
           news.map((newsItem) => (
-            <li key={newsItem.id}>
-              <NewsCard
-                news={newsItem}
-                addNewsToFavorite={() => addNewsToFavorite(newsItem.id)}
-              />
-            </li>
+            <NewsCard
+              key={newsItem.id}
+              news={newsItem}
+              addNewsToFavorite={() => addNewsToFavorite(newsItem.id)}
+            />
           ))
         ) : (
           <p>Currently there are no news related to this category</p>
