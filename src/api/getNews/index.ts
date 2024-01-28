@@ -14,6 +14,7 @@ export const getNews = async (): Promise<News[] | ErrorData> =>
         ...news,
         showOnHomepage: news.showOnHomepage === "yes",
         publishedDate: new Date(news.publishedDate).toDateString(),
+        isFavorite: false,
       }));
       return sortNewsByLatest(transformedData);
     },

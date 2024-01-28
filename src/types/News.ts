@@ -8,6 +8,7 @@ export interface News {
   publishedDate: string;
   showOnHomepage: boolean;
   category?: string;
+  isFavorite: boolean;
 }
 
 export interface Category {

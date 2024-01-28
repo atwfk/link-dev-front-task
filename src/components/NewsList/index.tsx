@@ -16,25 +16,46 @@ export default function NewsList({
   const [news, setNews] = useState([...newsData].slice(0, NEWS_LIMIT));
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
   const [allNewsLoaded, setAllNewsLoaded] = useState(false);
+  const [newsAddedToFav, setNewsAddedToFav] = useState<string[]>([]);
+
+  const updatedAllNews = newsData.map((newsItem) => ({
+    ...newsItem,
+    isFavorite: Boolean(newsAddedToFav.find((id) => id === newsItem.id)),
+  }));
 
   const filterNewsByCategory = (categoryId?: string) => {
     if (!categoryId) {
       setActiveCategory(null);
-      setNews(newsData.slice(0, !allNewsLoaded ? NEWS_LIMIT : newsData.length));
+      setNews(
+        updatedAllNews.slice(
+          0,
+          !allNewsLoaded ? NEWS_LIMIT : updatedAllNews.length
+        )
+      );
       return;
     }
 
-    const filteredNews = newsData
+    const filteredNews = updatedAllNews
       .filter((newsItem) => newsItem.categoryID === categoryId)
-      .slice(0, !allNewsLoaded ? NEWS_LIMIT : newsData.length);
+      .slice(0, !allNewsLoaded ? NEWS_LIMIT : updatedAllNews.length);
     setNews(filteredNews);
     setActiveCategory(categoryId);
   };
 
   const loadMoreNews = () => {
-    setNews([...newsData]);
+    setNews([...updatedAllNews]);
     setAllNewsLoaded(true);
     setActiveCategory(null);
+  };
+
+  const addNewsToFavorite = (newsId: string) => {
+    const updatedNews = news.map((newsItem) => ({
+      ...newsItem,
+      isFavorite: newsItem.id === newsId || newsItem.isFavorite,
+    }));
+    setNews(updatedNews);
+    const newsAlreadyAddedToFav = newsAddedToFav.find((id) => id === newsId);
+    if (!newsAlreadyAddedToFav) setNewsAddedToFav([...newsAddedToFav, newsId]);
   };
 
   return (
@@ -69,7 +90,10 @@ export default function NewsList({
         {news.length ? (
           news.map((newsItem) => (
             <li key={newsItem.id}>
-              <NewsCard news={newsItem} />
+              <NewsCard
+                news={newsItem}
+                addNewsToFavorite={() => addNewsToFavorite(newsItem.id)}
+              />
             </li>
           ))
         ) : (
